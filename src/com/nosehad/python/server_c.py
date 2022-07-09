@@ -48,7 +48,8 @@ class Server:
 </html>""", ['content-type', 'text/html']]
 
         try:
-            user.add_to_history(user.get_decrypter().decrypt(data) + additional)
+            if not pal:
+                user.add_to_history(user.get_decrypter().decrypt(data) + additional)
             requester = Requester(user.get_decrypter().decrypt(data) + additional, user, pal)
             return requester.get_res()
         except:
