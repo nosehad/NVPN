@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>NVPN - aLink</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro:wght@400;600&display=swap');
+
+        body  {
+            font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+            color: #fff;
+            height: 100%;
+            background: #2a2a32;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+        .main {
+            text-align: center;
+            padding-top: 2%;
+        }
+
+        
+        @media (min-width: 1000px) {
+            .box {
+                border-radius: 20px;
+                margin: auto;
+                align-self: center;
+                width: 50%;
+                background: #43404d;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .box {
+                border-radius: 20px;
+                margin: auto;
+                align-self: center;
+                width: 80%;
+                background: #43404d;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .bbutton {
+                height: 52px;
+                width: 200px;
+                margin: auto;
+                background: rgb(39, 39, 39); 
+                border: none; 
+                border-bottom-right-radius: 10px;
+                border-top-right-radius: 10px;
+                padding: 10px; 
+                color: white; 
+                font-size: 19px; 
+                cursor: pointer; 
+                transition: all 150ms ease-in-out; 
+            } 
+    
+            .cbutton {
+                height: 52px;
+                width: 200px;
+                margin: auto;
+                background-image: linear-gradient(45deg, #a344a6, #4b4bd0); 
+                border: none; 
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 10px;
+                padding: 10px; 
+                color: white; 
+                font-size: 19px; 
+                cursor: pointer; 
+                transition: all 150ms ease-in-out; 
+            }
+    
+            .cbutton:hover {
+                box-shadow: 0 0 10px 0 #4b4bd0 inset, 0 0 10px 4px #4b4bd0;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .bbutton {
+                height: 52px;
+                width: 200px;
+                margin: auto;
+                background: rgb(39, 39, 39); 
+                border: none; 
+                border-radius: 10px;
+                width: 90%;
+                padding: 10px; 
+                color: white; 
+                font-size: 19px; 
+                margin-bottom: 16px;
+                cursor: pointer; 
+                transition: all 150ms ease-in-out; 
+                margin-top: 10px;
+            } 
+    
+            .cbutton {
+                height: 52px;
+                width: 200px;
+                margin: auto;
+                background-image: linear-gradient(45deg, #a344a6, #4b4bd0); 
+                border: none; 
+                border-radius: 10px;
+                width: 90%;
+                padding: 10px; 
+                color: white; 
+                font-size: 19px; 
+                cursor: pointer; 
+                transition: all 150ms ease-in-out; 
+            }
+    
+            .cbutton:hover {
+                box-shadow: 0 0 10px 0 #4b4bd0 inset, 0 0 10px 4px #4b4bd0;
+            }
+        }
+
+        .wrap {
+            padding-left: 2%;
+            padding-right: 2%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+
+        @media (min-width: 1000px) {
+            .cinput {
+                height: 32px;
+                color: rgb(255, 255, 255);
+                background: #2a2a32;
+                padding: 10px;
+                font-size: 19px;
+                border: none;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .cinput {
+                height: 32px;
+                color: rgb(255, 255, 255);
+                background: #2a2a32;
+                padding: 10px;
+                margin-top: 10px;
+                width: 114px;
+                font-size: 19px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div id="title">
+        <h1>aLink - the <strong style="
+            background: -webkit-linear-gradient(45deg, #a344a6, #4b4bd0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;">Magic</strong> behind NVPN</h1>
+        </div>
+        <div class="box" id="create">
+            <div class="wrap">
+                <p><strong>How does it work?</strong> When you open an aLink, our Server gets the Page deposited behind it and sends a modified version to you. 
+                    <br><strong>But why?</strong> By using aLink, you don't directly communicate with the pages you view. For you, the advantage is, that
+                     you can browse safely without Trackers from sites like google, bypass site blockings in your network, or if you are a website owner in 
+                     the eu, you can use aLink to place content on your website, that isn't Privacy Confirm in the eu.</p>
+                <h2>You are convinced?</h2>
+                <button class="cbutton" onclick="create()">Get your aLink now</button><button class="bbutton" onclick="back()">Go Back to Home</button>
+            </div>     
+        </div>
+    </div>
+    <script type="text/javascript" src="/images/alink.js"></script>
+</body>
+</html>

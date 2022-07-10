@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro:wght@400;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+            font-family: 'Source Sans Pro', sans-serif;
+            height: 100%;
+            background: #2a2a32;
+        }
+        
+
+        form.search input[type=text] {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            height: 52px;
+            color: #fff;
+            background: #43404d;
+            padding: 10px;
+            font-size: 19px;
+            border: none;
+            float: left;
+            width: 80%;
+        }
+
+        form.search input[type=text]:focus {
+            outline: none;
+        }
+
+        form.search button {
+            height: 52px;
+            width: 60px;
+            margin: auto;
+            background-image: linear-gradient(45deg, #a344a6, #4b4bd0); 
+            border: none; 
+	        border-top-right-radius: 10px; 
+            border-bottom-right-radius: 10px; 
+            float: left; 
+            padding: 10px; 
+            color: white; 
+            font-size: 19px; 
+            cursor: pointer; 
+            transition: all 150ms ease-in-out; 
+        }
+
+        form.search button:hover {
+            box-shadow: 0 0 10px 0 #4b4bd0 inset, 0 0 10px 4px #4b4bd0;
+        }
+
+        form.search::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .cards-list {
+            justify-content: space-around;
+            padding-top: 5%;
+          width: 100%;
+          z-index: 50;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        
+        .card {
+          margin: 30px;
+          width: 80px;
+          height: 80px;
+          border-radius: 5.3px;
+          box-shadow: 2.5px 2.5px 15px 3.5px #4b4bd0, -2.5px -2.5px 15px 3.5px #a344a6;
+          cursor: pointer;
+          transition: 0.4s;
+        }
+        
+        .card .card_image {
+          width: inherit;
+          height: inherit;
+          border-radius: 5.3px;
+        }
+        
+        .card .card_image img {
+          width: inherit;
+          height: inherit;
+          border-radius: 5.3px;
+          object-fit: cover;
+        }
+        
+        .card .card_title {
+          color: white;
+          text-align: center;
+          border-radius: 0px 0px 40px 40px;
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 12px;
+          height: 40px;
+        }
+        
+        .card:hover {
+          transform: scale(0.9, 0.9);
+          box-shadow:2.5px 2.5px 15px 3.5px #4b4bd0, -2.5px -2.5px 15px 3.5px #a344a6;
+        }
+        
+        .h1 {
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 20px;
+        }
+
+        @media (max-width: 1000px) {
+            .apps {
+              width: 100%;
+              text-align: center;
+              margin: auto;
+            }
+            .card {
+              width: 250px;
+              height: 250px;
+              border-radius: 24px;
+              box-shadow: 2.5px 2.5px 15px 3.5px #4b4bd0, -2.5px -2.5px 15px 3.5px #a344a6;
+              cursor: pointer;
+              transition: 0.4s;
+            }
+            form.search {
+                max-width:80%;
+            }
+        }
+
+        .settings {
+            transition: all 150ms ease-in-out;
+            border: none;
+            background-color: transparent;
+        }
+
+        .settings:hover {
+            transform: scale(0.9, 0.9);
+        }
+
+        @media (min-width: 1000px) {
+            .apps {
+                margin: auto;
+                max-width: 70%;
+                position: relative;
+                padding-right: 5.6%;
+              }
+              .card {
+                margin: 30px;
+                width: 80px;
+                height: 80px;
+                border-radius: 5.3px;
+                box-shadow: 2.5px 2.5px 15px 3.5px #4b4bd0, -2.5px -2.5px 15px 3.5px #a344a6;
+                cursor: pointer;
+                transition: 0.4s;
+              }
+            form.search {
+                max-width:50%;
+            }
+            .logo {
+                max-width: 80%;
+                position: relative;
+                padding-left: 14%;
+            }
+        }
+    
+    
+
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta charset="UTF-8">
+    <title>NVPN - Home</title>
+</head>
+<body style="width: 100%;">
+        <div class="settings-con" style="text-align: right; padding-right: 16px; ">
+            <button onclick="settings()" class="settings">
+                <img src="/images/settings.png" width="30" height="30">
+            </button>
+        </div>
+        <!-- my logo -->
+        <div class="logo" style="text-align: center; padding-top: 7.5%;">
+            <img src="/images/logo_letters.png" width="246" height="82">
+        </div> 
+
+        <!-- search bar -->
+        <div class="wrap" style="width:100%;">
+        <form class="search" action="/open" style="margin:auto;padding-top: 7.5%;">
+            <input type="text" placeholder="Search with google or enter address" name="data">
+            <button type="submit"><img src="/images/google.png" width="33" height="33" style="margin: auto;padding-bottom: 1px;"></button>
+          </form>  
+        </div>   
+ 
+        <div class="apps">
+            <!-- Well known websites in an app layout -->
+            <div class="cards-list">
+                <div id="amazon" class="card">
+                  <div class="card_image"> <img src="/images/amazon.png" /> </div>
+                  <div class="card_title title-white">
+                    <p>Amazon</p>
+                  </div>
+                </div>
+                
+                  <div id="apple" class="card">
+                  <div class="card_image">
+                    <img src="/images/apple.png" />
+                    </div>
+                  <div class="card_title title-white">
+                    <p>Apple</p>
+                  </div>
+                </div>
+                
+                <div id="github" class="card">
+                  <div class="card_image">
+                    <img src="/images/github.png" />
+                  </div>
+                  <div class="card_title">
+                    <p>Github</p>
+                  </div>
+                </div>
+                  
+                  <div id="pinterest" class="card">
+                  <div class="card_image">
+                    <img src="/images/pinterest.png" />
+                    </div>
+                  <div class="card_title">
+                    <p>Pinterest</p>
+                  </div>
+                  </div>
+
+                  <div id="stackoverflow" class="card">
+                    <div class="card_image">
+                      <img src="/images/stack-overflow.png" />
+                      </div>
+                    <div class="card_title">
+                      <p>Stackoverflow</p>
+                    </div>
+                    </div>
+
+                    <div id="wikipedia" class="card">
+                        <div class="card_image">
+                          <img src="/images/wikipedia.png" />
+                          </div>
+                        <div class="card_title">
+                          <p>Wikipedia</p>
+                        </div>
+                        </div>
+
+                    <div id="reddit" class="card">
+                    <div class="card_image">
+                      <img src="/images/reddit.png" />
+                      </div>
+                    <div class="card_title">
+                      <p>Reddit</p>
+                    </div>
+                    </div>
+        
+                
+                </div>
+
+        </div>    
+        <script type="text/javascript" src="/images/home.js"></script>
+</body>
+</html>

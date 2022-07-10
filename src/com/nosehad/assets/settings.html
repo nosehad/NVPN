@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta charset="UTF-8">
+    <title>NVPN - Settings</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro:wght@400;600&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 50px;
+  background: -webkit-linear-gradient(45deg, #a344a6, #4b4bd0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom:5px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.settings .column_left {
+  padding: 0 2em 0 0;
+}
+
+.settings .column_right {
+  background: #43404d;;
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+.settings .column_right label {
+  display:block;
+  margin-bottom:1rem;
+  position:relative;
+}
+
+.settings .column_right label span {
+  align-items:center;
+  font-weight: 700;
+  margin-bottom:.123em
+}
+
+.settings .column_right label input {
+  background: #fefefe;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  padding: calc(1rem - 2px);
+  font-size: .875rem;
+  line-height:1.1;
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1000px) {
+            .bbutton {
+                height: 52px;
+                width: 200px;
+                margin: auto;
+                background-image: linear-gradient(45deg, #fd3741, #e20039);
+                border: none; 
+                border-bottom-right-radius: 10px;
+                border-top-right-radius: 10px;
+                padding: 10px; 
+                color: white; 
+                font-size: 19px; 
+                cursor: pointer; 
+                transition: all 150ms ease-in-out; 
+            } 
+    
+            .cbutton {
+                height: 52px;
+                width: 200px;
+                margin: auto;
+                background-image: linear-gradient(45deg, #a344a6, #4b4bd0); 
+                border: none; 
+                border-bottom-left-radius: 10px;
+                border-top-left-radius: 10px;
+                padding: 10px; 
+                color: white; 
+                font-size: 19px; 
+                cursor: pointer; 
+                transition: all 150ms ease-in-out; 
+            }
+    
+            .cbutton:hover {
+                box-shadow: 0 0 10px 0 #4b4bd0 inset, 0 0 10px 4px #4b4bd0;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .bbutton {
+                height: 52px;
+                width: 200px;
+                margin: auto;
+                background-image: linear-gradient(45deg, #fd3741, #e20039);
+                border: none; 
+                border-radius: 10px;
+                width: 90%;
+                padding: 10px; 
+                color: white; 
+                font-size: 19px; 
+                cursor: pointer; 
+                transition: all 150ms ease-in-out; 
+                margin-top: 10px;
+            } 
+    
+            .cbutton {
+                height: 52px;
+                width: 200px;
+                margin: auto;
+                background-image: linear-gradient(45deg, #a344a6, #4b4bd0); 
+                border: none; 
+                border-radius: 10px;
+                width: 90%;
+                padding: 10px; 
+                color: white; 
+                font-size: 19px; 
+                cursor: pointer; 
+                transition: all 150ms ease-in-out; 
+            }
+    
+            .cbutton:hover {
+                box-shadow: 0 0 10px 0 #4b4bd0 inset, 0 0 10px 4px #4b4bd0;
+            }
+        }
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+    color: #fff;
+    height: 100%;
+    background: #2a2a32;
+}
+
+.main_section {
+  max-width: 1142px;
+  padding:40px 0;
+}
+
+@media (min-width: 1000px) {
+.settings {
+  width: 100%;
+  display:grid;
+  grid-template-columns: minmax(0,32fr) minmax(0,68fr);
+  grid-gap: 1rem;
+  margin-bottom:2rem;
+}
+}
+
+
+@media (max-width: 1000px) {
+.settings {
+  width: 100%;
+  margin-bottom:2rem;
+}
+}
+
+.selector {
+    border: none;
+    height: 30px;
+    width: 200px;
+    border-radius: 3px;
+    background: #2a2a32;
+    color: #fff;
+}
+
+ /* The switch - the box around the slider */
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22.6px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17.3px;
+  width: 17.3px;
+  left: 3px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-image: linear-gradient(45deg, #a344a6, #4b4bd0);
+  box-shadow: 0 0 10px 0 #4b4bd0 inset, 0 0 10px 4px #4b4bd0;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px linear-gradient(45deg, #a344a6, #4b4bd0);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(17.3px);
+  -ms-transform: translateX(17.3px);
+  transform: translateX(17.3px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+
+
+
+
+    </style>
+</head>
+<body>
+    <div style="width:90%; margin:0 auto">
+
+        <section class="main_section">
+          <h1>Your Account</h1>
+            <section class="settings">
+              <div class="column_left">
+                <h3>Account Info</h3>
+                <p>
+                  Thats all we know about you.
+                </p>
+              </div>
+              <div class="column_right">
+                <label>
+                  <span>Email: </span>
+                  <input type="text" id="email" placeholder="example@nosehad.com" style="background: #dddddd;" disabled="disabled">
+                </label>
+                <label>
+                  <span>Password: </span>
+                  <input type="password" id="passwd" placeholder="*******" style="background: #dddddd;"  disabled="disabled">
+                </label>
+                <label>
+                    <span>Account Age: </span>
+                    <input type="text" id="age" placeholder="12/1/1999" style="background: #dddddd;"  disabled="disabled">
+                </label>
+              </div>
+            </section>
+
+            <section class="settings">
+              <div class="column_left">
+                <h3>Qulity of Life Features</h3>
+                <p>
+                  Here you can find usefull QOL-Features, which could improve your life!
+                </p>
+              </div>
+              <div class="column_right">
+                <label>
+                    <span>Password Manager (<strong style="color: rgb(255, 56, 42)">Coming soon</strong>)</span>
+                    <p>
+                      If you are still using the password vault of your browser, STOP IT!
+                      Your browser stores your passwords locally, which makes it easy for hacker to sill them, using
+                      our password manager, your passwords are stored encrypted on a secure server. Nobody can access them.
+                    </p>
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                  </label>
+                  </label>
+              </div>
+            </section>
+    
+            <section class="settings">
+              <div class="column_left">
+                <h3>Your Footprint</h3>
+                <p>
+                  Using HTML headers, we are able to send a fake data to websites you visit.
+                  <br>
+                  <br>
+                  <strong style="  background: -webkit-linear-gradient(45deg, #fd3741, #e20039);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;">DISCLAIMER: </strong>
+                  Its not guaranteed, that websites accept our "fake packets".
+                </p>
+              </div>
+              <div class="column_right">
+                <label>
+                    <span>Country: </span><br>
+                    <select class="selector" id="country">
+                        <img src="./germany.png" style="width: 20px; height: 20px;">
+                        <option value="de">Germany <img src="/images/germany.png" style="width: 20px; height: 20px;"></option>
+                        <option value="ru">Russia <img src="/images/russia.png" style="width: 20px; height: 20px;"></option>
+                        <option value="us">United States <img src="/images/united-states.png" style="width: 20px; height: 20px;"></option>
+                        <option value="uk">United Kingdom <img src="/images/united-kingdom.png" style="width: 20px; height: 20px;"></option>
+                        <option value="fr">France <img src="/images/france.png" style="width: 20px; height: 20px;"></option>
+                      </select>
+                  </label>
+                  <label>
+                      <span>Browser: </span>
+                      <p>By manipulating your useragent we can pretend, that you are on a specific Browser.</p>
+                      <select class="selector" id="browser">
+                          <option value="ch">Chrome <img src="/images/germany.png" style="width: 20px; height: 20px;"></option>
+                          <option value="ff">Firefox <img src="/images/russia.png" style="width: 20px; height: 20px;"></option>
+                          <option value="bf">Brave <img src="/images/united-states.png" style="width: 20px; height: 20px;"></option>
+                          <option value="me">Microsoft Edge <img src="/images/united-kingdom.png" style="width: 20px; height: 20px;"></option>
+                      </select>
+                  </label>
+                  <label>
+                    <span>Operating System: </span><br>
+                    <select class="selector" id="os">
+                        <option value="mo">MacOS <img src="/images/germany.png" style="width: 20px; height: 20px;"></option>
+                        <option value="l">Linux <img src="/images/russia.png" style="width: 20px; height: 20px;"></option>
+                        <option value="w">Windows <img src="/images/united-states.png" style="width: 20px; height: 20px;"></option>
+                        <option value="a">Android <img src="/images/united-kingdom.png" style="width: 20px; height: 20px;"></option>
+                        <option value="i">IOS <img src="/images/united-kingdom.png" style="width: 20px; height: 20px;"></option>
+                    </select>
+                </label>
+                  <label>
+                      <span>Auto Consent: </span>
+                      <p>
+                        Automatically sends an "consent cookie" to the website you are opening,<br>
+                        this allows you to skipp the annoying "Do you want to accept our cookies?" message.
+                      </p>
+                      <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                  </label>
+              </div>
+            </section>
+    
+            <section class="settings">
+              <div class="column_left"></div>
+              <div class="column_right">
+                  <button class="cbutton" onclick="save()" type="submit" name="save" class="save button">Save & Exit</button>
+                  <button class="bbutton" onclick="logout()" type="submit" name="save" class="save button">Logout</button>
+              </div>
+            </section>
+            
+    
+          
+        </section>
+      
+    </div>
+    <script type="text/javascript" src="images/settings.js"></script>
+</body>
+</html>
