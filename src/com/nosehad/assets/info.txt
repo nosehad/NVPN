@@ -1,3 +1,0 @@
-I don't have any Copyright on the assets folder, 
-the icons (except for my logo) are from this page: https://www.flaticon.com/ and 
-the bulma.io css framework (https://bulma.io/) is not my work!
