@@ -80,6 +80,8 @@ class ReplacerHtml:
             target += self.target[number]
         if target.startswith('http'):
             return ("/pal/" if self.pal else "/go/") + self.encrypter.encrypt(target)
+        elif target.startswith('//'):
+            return ("/pal/" if self.pal else "/go/") + self.encrypter.encrypt("https:" + target)
         elif target.startswith('/'):
             temp = [str(), 0]
             for char in self.uri:
@@ -111,8 +113,6 @@ class ReplacerHtml:
                 temp[0] += char
             return ("/pal/" if self.pal else "/go/") + self.encrypter.encrypt(
                 temp[0] + '/' + target)
-        elif target.startswith('//'):
-            return ("/pal/" if self.pal else "/go/") + self.encrypter.encrypt("https:" + target)
         elif target.startswith('sha512') or target.startswith('sha384') or target.startswith('sha256'):
             return points[self.process[0]][0]
         else:
